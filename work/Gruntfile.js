@@ -66,7 +66,7 @@ module.exports = function(grunt) {
          * @see http://blog.stevenlevithan.com/archives/date-time-format
          */
 
-        now: grunt.template.today('yyyymmdd'), // Alternative: yyyymmddhhMMss
+        now: grunt.template.today('yyyymmddhhMM'), // Alternative: yyyymmddhhMMss
 
         ver: 1, // Increment if more than one build is needed in a single day.
 
@@ -96,6 +96,35 @@ module.exports = function(grunt) {
 
             }
 
+        },
+
+        /*----------------------------------( SYMLINK )----------------------------------*/
+
+        /**
+         * Create symbolic links.
+         *
+         * @see https://github.com/gruntjs/grunt-contrib-symlink
+         */
+
+        symlink: {
+            // Enable overwrite to delete symlinks before recreating them
+            options: {
+                overwrite: true
+            },
+            js: {
+                files: [
+                    // All child directories in "source" will be symlinked into the "build"
+                    // directory, with the leading "source" stripped off.
+                    {
+                        expand: true,
+                        overwrite: true,
+                        cwd: './files/plugins/',
+                        src: ['*'],
+                        dest: './files/js/vendor/',
+                        filter: 'isDirectory'
+                    }
+                ]
+            }
         },
 
         /*----------------------------------( JSHINT )----------------------------------*/
@@ -201,23 +230,34 @@ module.exports = function(grunt) {
                 files: {
 
                     '../build/prod/<%= pkg.version %>/<%= now %>/<%= ver %>/js/<%= pkg.name %>.min.js': [
-                        './files/js/fastclick.js',
-                        './files/js/jquery.js',
+                        //'./files/js/fastclick.js',
+                        //'./files/js/jquery.js',
                         './files/js/jquery.*.js',
                         './files/js/<%= pkg.name %>.js',
                         './files/js/<%= pkg.name %>.mod.*.js',
-                        './files/js/<%= pkg.name %>.init.js'
+                        './files/js/<%= pkg.name %>.init.js',
+                        './files/js/vendor/**/*.js'
                     ]
 
                     // Optionally, add more generated files here ...
 
                 }
 
+                //,
+                //my_target: {
+                //    files: [{
+                //        expand: true,
+                //        cwd: 'src/js',
+                //        src: '**/*.js',
+                //        dest: 'dest/js'
+                //    }]
+                //}
+
             }
 
         },
 
-        /*----------------------------------( SASS )----------------------------------*/
+        /*----------------------------------( LESS )----------------------------------*/
 
         /**
          * Compile LESS to CSS.
@@ -228,7 +268,7 @@ module.exports = function(grunt) {
         less: {
             dev: {
                 options: {
-                    strictMath: true,
+                    strictMath: false,
                     compress: false
 
                 },
@@ -239,7 +279,7 @@ module.exports = function(grunt) {
             },
             prod: {
                 options: {
-                    strictMath: true,
+                    strictMath: false,
                     compress: true
                 },
                 files: {
@@ -347,7 +387,10 @@ module.exports = function(grunt) {
                         src: [
                             'img/**/*.*', // Could also use: `*.{gif,png,svg}`
                             'js/**/*',
-                            '!**/source/**'
+                            'frameworks/startup/common-files/**/*.*',
+                            'frameworks/startup/flat-ui/dist/**/*.*',
+                            '!**/source/**',
+                            '!**/frameworks/startup/common-files/less/**'
                         ],
                         dest: '../build/dev/'
 
@@ -367,8 +410,11 @@ module.exports = function(grunt) {
                         cwd: './files/',
                         src: [
                             'img/**/*.*',
+                            'frameworks/startup/common-files/**/*.*',
+                            'frameworks/startup/flat-ui/dist/**/*.*',
                             '!**/source/**',
-                            '!**/junk/**'
+                            '!**/junk/**',
+                            '!**/frameworks/startup/common-files/less/**'
                         ],
                         dest: '../build/prod/<%= pkg.version %>/<%= now %>/<%= ver %>/'
 
@@ -388,14 +434,7 @@ module.exports = function(grunt) {
 
         },
 
-        /*----------------------------------( WATCH )----------------------------------*/
 
-        /**
-         * Run predefined tasks whenever watched file patterns are added, changed
-         * or deleted.
-         *
-         * @see https://github.com/gruntjs/grunt-contrib-watch
-         */
 
         connect: {
             options: {
@@ -410,6 +449,15 @@ module.exports = function(grunt) {
                 }
             }
         },
+
+        /*----------------------------------( WATCH )----------------------------------*/
+
+        /**
+         * Run predefined tasks whenever watched file patterns are added, changed
+         * or deleted.
+         *
+         * @see https://github.com/gruntjs/grunt-contrib-watch
+         */
 
         watch: {
             livereload: {
@@ -439,8 +487,6 @@ module.exports = function(grunt) {
 
     /*----------------------------------( TASKS )----------------------------------*/
 
-    grunt.loadNpmTasks('grunt-contrib-connect');
-
     grunt.loadNpmTasks('grunt-bower-task');
 
     grunt.loadNpmTasks('grunt-contrib-watch');
@@ -460,6 +506,10 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-preprocess');
 
     grunt.loadNpmTasks('grunt-contrib-copy');
+
+    grunt.loadNpmTasks('grunt-contrib-connect');
+
+    grunt.loadNpmTasks('grunt-contrib-symlink');
 
     //----------------------------------
 
@@ -481,6 +531,6 @@ module.exports = function(grunt) {
     grunt.registerTask('default', ['dev']);
 
     // Run server, run...
-    grunt.registerTask('server', ['init', 'env:dev', 'clean:dev', 'less:dev', 'preprocess:dev', 'copy:dev', 'connect:livereload', 'watch']);
+    grunt.registerTask('server', ['init', 'symlink', 'env:dev', 'clean:dev', 'less:dev', 'preprocess:dev', 'copy:dev', 'connect:livereload', 'watch']);
 
 };
