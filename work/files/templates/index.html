@@ -1,0 +1,27 @@
+<!-- @include includes/top.html -->
+
+<h1><!--@echo NODE_ENV--></h1>
+
+<!-- @if NODE_ENV == 'DEVELOPMENT' -->
+
+
+
+<!-- @endif -->
+
+<!-- @if NODE_ENV == 'PRODUCTION' -->
+
+<img src="<!-- @echo production -->/prod/<!-- @echo version -->/<!-- @echo now -->/<!-- @echo ver -->/images/grunt-logo.svg">
+
+<!-- @endif -->
+
+<hr>
+
+<!-- @if NODE_ENV == 'DEVELOPMENT' -->
+
+
+
+<!-- @endif -->
+
+
+
+<!-- @include includes/bottom.html -->

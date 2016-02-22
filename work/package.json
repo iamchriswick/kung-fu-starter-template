@@ -1,0 +1,47 @@
+{
+  "title": "Grunt HTML Boiler",
+  "name": "ghb",
+  "description": "A starting point for Grunt.js HTML projects/repositories.",
+  "version": "1.0.0",
+  "homepage": "https://github.com/mhulse/grunt-html-boiler",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mhulse/grunt-html-boiler.git"
+  },
+  "author": {
+    "name": "Micky Hulse",
+    "url": "http://mky.io"
+  },
+  "//": "The following FQDN is the endpoint for your assets (no trailing slash):",
+  "production": "http://mhulse.github.io/grunt-html-boiler",
+  "licenses": [
+    {
+      "type": "Apache License, Version 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0"
+    }
+  ],
+  "devDependencies": {
+    "grunt": "~0",
+    "grunt-bower-task": "~0",
+    "grunt-cli": "~0",
+    "grunt-contrib-clean": "~0",
+    "grunt-contrib-concat": "~1",
+    "grunt-contrib-connect": "^0.11.2",
+    "grunt-contrib-copy": "~0",
+    "grunt-contrib-jshint": "~1",
+    "grunt-contrib-less": "^1.2.0",
+    "grunt-contrib-sass": "~0",
+    "grunt-contrib-uglify": "~0",
+    "grunt-contrib-watch": "~0",
+    "grunt-env": "~0",
+    "grunt-express-server": "^0.5.2",
+    "grunt-preprocess": "~5"
+  },
+  "scripts": {
+    "bower": "grunt bower",
+    "dev": "grunt",
+    "grunt": "grunt",
+    "prod": "grunt prod",
+    "watch": "grunt watch"
+  }
+}

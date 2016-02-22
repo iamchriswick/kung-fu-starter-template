@@ -1,0 +1,40 @@
+		</section>
+		
+	</main>
+	
+	<hr>
+	
+	<!-- @if NODE_ENV == 'DEVELOPMENT' -->
+	
+	<script src="./js/jquery.js"></script>
+	<script src="./js/jquery.cookie.js"></script>
+	<script src="./js/fastclick.js"></script>
+	<script src="./js/<!-- @echo name -->.js"></script>
+	<script src="./js/<!-- @echo name -->.mod.fastclick.js"></script>
+	<script src="./js/<!-- @echo name -->.mod.twitter.js"></script>
+	<script src="./js/<!-- @echo name -->.mod.test.js"></script>
+	<script src="./js/<!-- @echo name -->.init.js"></script>
+	<script src="./js/development.js"></script>
+	
+	<script>
+		
+		$(function() {});
+		
+		$(document).ready(function() {});
+		
+		$(window).load(function() {});
+		
+		$(window).resize(function() {});
+		
+	</script>
+	
+	<!-- @endif -->
+	
+	<!-- @if NODE_ENV == 'PRODUCTION' -->
+	
+	<script src="<!-- @echo production -->/prod/<!-- @echo version -->/<!-- @echo now -->/<!-- @echo ver -->/js/<!-- @echo name -->.min.js"></script>
+	
+	<!-- @endif -->
+	
+</body>
+</html>
