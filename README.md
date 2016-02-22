@@ -1,204 +1,140 @@
-# Grunt HTML Boiler
+Kung Fu Starter Template 1.0.1
+================
 
-<a href="http://gruntjs.com/" title="Built with Grunt"><img src="https://cdn.gruntjs.com/builtwith.png" alt="Built with Grunt" align="right"></a>
+## Kung Fu Starter Template
+================
 
-**A starting point for [Grunt.js](http://gruntjs.com/) HTML projects/repositories.**
+The **Kung Fu Starter Template** is a webite boilerplate, that generates static html, css, and javascript files, created with [Bower](http://bower.io/), [Grunt](http://gruntjs.com/), [Startup Design Framework](http://designmodo.com/startup/) and [Flat UI](http://designmodo.com/flat/).
 
-## About
+*This repository only includes the code for [Startup Design Framework Demo](http://designmodo.github.io/startup-demo/) and [Flat UI Free](http://designmodo.github.io/Flat-UI/).*
 
-This repo is just an example of my preferred Grunt-powered asset/theme files workflow.
+Learn more about **Startup Design Framework** and **Flat UI** below.
 
-It’s my preference to separate asset/theme files from server-side code/templates. A few advantages to this type of setup is:
+### Getting Started
 
-1. Updating theme becomes as simple as changing one variable ([see below](#update-production-theme)).
-1. Build and commit theme files separately from server-side logic/templates.
+####Dependencies
 
-This repo also serves as an example of how one can use Grunt (via [`grunt-env`](https://github.com/jsoverson/grunt-env/) and [`grunt-preprocess`](https://github.com/jsoverson/grunt-preprocess/) tasks) to build a “development” and “production” `index.html`, and other, file(s).
+External dependencies are managed quickly and easily with Bower. Simply:
 
-## Demos
+1. Add a dependency to bower.json.
+2. Run bower install.
+3. Add references within your HTML, and you are all set.
 
-* [Development build](http://mhulse.github.io/grunt-html-boiler/dev/) (non-minified/uglified, etc.)
-* [Production build](http://mhulse.github.io/grunt-html-boiler/prod/)
+*Note: If required, run `npm install -g bower` first to install bower.*
 
-## Development
+####Development
 
-Assuming you already have [Grunt.js](http://gruntjs.com/) installed …
+Development is quick and easy thanks to Grunt. Simply:
 
-**Note:** The Grunt [command line interface](https://github.com/gruntjs/grunt-cli) gets installed locally, so you can skip `$ npm install -g grunt-cli` if you use the `$ npm run` commands.
++ Run `grunt` to build the project with your updates included, or
++ Run `grunt server` to build the project, watch for changes, and provide a local server with source maps and live reload as you hack away.
 
-### Installation
+*Note: If required, run `npm install` first to install grunt with grunt packages.*
 
-Here’s a few ways to install this code:
+### Author
 
-1. Download as a [`zip`](../../archive/gh-pages.zip).
-1. Clone it: `$ git clone https://github.com/mhulse/grunt-html-boiler.git`.
-1. Fork it and clone: `$ git clone git@github.com:USERNAME/grunt-html-boiler.git`.
+**Christian Wick**
 
-### Setup dependencies
++ [http://iamchriswick.com](http://iamchriswick.com/)
++ [http://twitter.com/iamchriswick](https://twitter.com/iamchriswick/)
 
-Navigate to the local repo’s `build/` directory:
+### Typeface
+The **Kung Fu Starter Template** is made using the **Lato typeface**, which can be downloaded for free from [http://www.google.com/webfonts/specimen/Lato](http://www.google.com/webfonts/specimen/Lato/).
 
-```bash
-$ cd grunt-html-boiler/build/
-```
+### Kung Fu Starter Template License
 
-Install Grunt tasks:
+This code is released under an **MIT License**.  You can view the license details below:
 
-```bash
-$ npm install
-```
+#### The MIT License (MIT)
 
-Optionally, install the latest [Bower](http://bower.io/) plugin versions:
+Copyright © 2016 Christian Wick
 
-```bash
-$ grunt bower
-# … or:
-$ npm run bower
-```
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
-… this will install plugins (as defined in `build/bower.json`) into the `build/files/plugins/` directory; in order to keep things tidy, I’ve created these symlinks:
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
-Plugin | Destination
-:-- | :--
-`build/plugins/fastclick/fastclick.js` | `build/scripts/fastclick.js`
-`build/plugins/jquery/jquery.js` | `build/scripts/jquery.js`
-`build/plugins/normalize-css/normalize.css` | `build/styles/partials/_normalize.scss`
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-### Development preview
 
-Test the development build:
+## Startup Design Framework
+================
 
-```bash
-$ grunt
-# … or:
-$ grunt dev
-# … or:
-$ npm run dev
-```
+### What is Startup Design Framework?
 
-Visit the development build:
+**Startup Design Framework** is a website builder for professionals. Startup Design Framework contains components and complex blocks (PSD+HTML Bootstrap themes and templates) which can easily be integrated into almost any design. All of these components are made in the same style, and can easily be integrated into projects, allowing you to create hundreds of solutions for your future projects.
 
-<http://localhost/grunt-html-boiler/dev/>
+###Startup Design Framework Demo
 
-**Note:** The above URL will depend upon your local development environment; for previewing my projects I use [XAMPP](http://www.apachefriends.org/index.html).
+The **Startup Design Framework Demo** is included in this repository.
 
-Alternatively, you could setup [`grunt-contrib-connect`](https://github.com/gruntjs/grunt-contrib-connect) ([#37](../../issues/37)).
+###Startup Design Framework
 
-### Edit
+Get the full version of **Startup Design Framework** from [http://designmodo.com/startup](http://designmodo.com/startup/?u=2321/)
 
-At this point, you can modify any of the files, especially the ones found in the `build/files/` directory.
+###Authors
 
-Modify `build/package.json` to meet the needs of your repo/project.
+**Sergey Shmidt**
 
-**Note:** The `production` key’s value is the URI where the final production files will live.
++ [http://shmidt.in](http://shmidt.in)
++ [http://twitter.com/monstercritic](http://twitter.com/monstercritic)
 
-To make life easier while developing, run:
+**Sergii Iurevych**
 
-```bash
-$ grunt watch
-# … or:
-$ npm run watch
-```
++ [http://twitter.com/iurevych](http://twitter.com/iurevych)
++ [http://github.com/iurevych](http://github.com/iurevych)
 
-… the `watch` command will run a development build any time these directories/file(s) change:
+**Dmitry Pytkin**
 
-```text
-build/Gruntfile.js
-build/files/scripts/<%= pkg.ns %>.*.js
-build/files/scripts/**/*
-build/files/styles/**/*
-build/files/templates/**/*
-```
++ [http://twitter.com/pytkin](http://twitter.com/pytkin)
++ [http://github.com/pytkin](http://github.com/pytkin)
 
-### Production build
 
-Once you’re ready to do a production build, run:
 
-```bash
-$ grunt prod
-# … or:
-$ npm run prod
-```
+###Copyright and license
 
-Push the production build to your GitHub repo.
+The **Startup Design Framework Demo** is licensed under a [CC 4.0](http://creativecommons.org/licenses/by/4.0/deed.en_US).
 
-Depending on your setup, you may need to pull the latest build to your production server.
+You are allowed to use these components anywhere you want, however **Designmodo** highly appreciate if you will link to their [website](http://designmodo.com).
 
-Visit the production build locally:
 
-<http://localhost/grunt-html-boiler/prod/>
+##Flat UI
+================
 
-**Note:** The production build’s asset files are absolutely linked to the production server; hence the need to push the latest files there before previewing the production’s HTML file and related assets.
+###What is Flat UI?
 
-### Update production theme
+**Flat UI** is a beautiful theme for [Bootstrap](http://getbootstrap.com). Many of Bootstrap's components are redesigned to look flat in every pixel.
 
-Finally, in a real world scenario, you would update the asset path (on your live templates) by updating the URL to the latest production build. For example, here’s a simple PHP function one could use in a WordPress `functions.php` file:
+To get started, check out the [getting started page](http://designmodo.github.io/Flat-UI/docs/getting-started.html) or follow the instructions on [https://github.com/designmodo/Flat-UI](https://github.com/designmodo/Flat-UI/).
 
-```php
-/**
- * Theme build version.
- *
- * Called like so: <?=theme_build()?>
- */
+###Flat UI Free
 
-function theme_build() {
-	
-	return '/prod/1.0.0/20140222/1'; // Edit this string to update theme across site.
-	
-}
-```
+**Flat UI Free** is included in this repository.
 
-… and on the template level:
+###Flat UI Pro
 
-```html
-<link rel="stylesheet" href="http://static.foo.com<?=theme_build()?>/styles/grunt-html-boiler.min.css">
-<script src="http://static.foo.com<?=theme_build()?>/js/grunt-html-boiler.min.js"></script>
-```
+Get the full version of **Flat UI** from [http://designmodo.com/flat/](http://designmodo.com/flat/?u=2321/)
 
-## Notes
+###Authors
 
-1. This project generates two groups of Grunt-built files: 1) Un-minified/uglified, and 2) minified/uglified. I prefer having my development- and production-generated files separately built.
+**Sergey Shmidt**
 
-1. This project puts the “build” code a level deep off the root. In my opinion, having the source files out of the root and in a sub-directory allows for the overall setup to be more organized and streamlined.
++ [http://shmidt.in](http://shmidt.in)
++ [http://twitter.com/monstercritic](http://twitter.com/monstercritic)
 
-## Links
+**Sergii Iurevych**
 
-* [Have Grunt generate `index.html` for different setups](http://stackoverflow.com/a/14970339/922323)
-* [grunt-js-boiler](https://github.com/mhulse/grunt-js-boiler)
++ [http://twitter.com/iurevych](http://twitter.com/iurevych)
++ [http://github.com/iurevych](http://github.com/iurevych)
 
-### Real-world
+**Dmitry Pytkin**
 
-Personal projects that have used `grunt-html-boiler` as a starting point:
++ [http://twitter.com/pytkin](http://twitter.com/pytkin)
++ [http://github.com/pytkin](http://github.com/pytkin)
 
-* [2014 General Election](https://github.com/mhulse/election-2014-general)
-* [Drone](https://github.com/registerguard/drone)
-* [Zeppelin](https://github.com/registerguard/zeppelin)
-* [Purely Packery](https://github.com/mhulse/purely-packery)
-* [Infinitope!](https://github.com/mhulse/infinitope)
-* [Popular](https://github.com/rgpages/popular)
 
-## Build instructions?
 
-… and other development notes, can be found [here](build/README.md).
+###Copyright and license
 
-## Contributing
+**Flat UI Free** is licensed under a [Creative Commons Attribution 3.0 Unported (CC BY 3.0)](http://creativecommons.org/licenses/by/3.0/) and [MIT License](http://opensource.org/licenses/mit-license.html).
 
-Please read the [CONTRIBUTING.md](CONTRIBUTING.md).
-
-## Feedback
-
-[Bugs? Constructive feedback? Questions?](../../issues/new?title=Your%20code%20sucks!&body=Here%27s%20why%3A%20)
-
----
-
-#### LEGAL
-
-Copyright © 2016 [Micky Hulse](http://mky.io)
-
-Licensed under the Apache License, Version 2.0 (the “License”); you may not use this work except in compliance with the License. You may obtain a copy of the License in the LICENSE file, or at:
-
-[http://www.apache.org/licenses/LICENSE-2.0](http://www.apache.org/licenses/LICENSE-2.0)
-
-Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an ”AS IS” BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
-
-<img width="20" height="20" align="absmiddle" src="https://github.global.ssl.fastly.net/images/icons/emoji/octocat.png" alt=":octocat:" title=":octocat:" class="emoji">
+You are allowed to use these elements anywhere you want, however **Designmodo** highly appreciate if you will link to their [website](http://designmodo.com).
